@@ -21,6 +21,5 @@
     <file src="Cake.MSBuildTask.pdb" />
     <file src="Microsoft.Build.Framework.dll" />
     <file src="Microsoft.Build.Utilities.v4.0.dll" />
-    <file src="LICENSE" />
   </files>
 </package>
