@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>Cake.MSBuildTask</title>
+		<link>http://cake-contrib.github.io/Cake.MSBuildTask</link>
+		<description />
+		<copyright>2017</copyright>
+		<pubDate>Thu, 27 Apr 2017 20:57:44 GMT</pubDate>
+		<lastBuildDate>Thu, 27 Apr 2017 20:57:44 GMT</lastBuildDate>
+		<item>
+			<title>New Release - 0.1.0</title>
+			<link>http://cake-contrib.github.io/Cake.MSBuildTask/blog/new-release-0.1.0</link>
+			<description>&lt;p&gt;We (the Cake Team) recently learned that the original creator of the Cake.MSBuildTask addin (which was one of the first Cake Addins), tragically died.  With the help of GitHub and NuGet, we have taken the source code for the addin and moved it into the Cake Contrib Organisation, as well as been made a co-owner of the package on NuGet.org.  This means that we will be able to continue to support this addin.&lt;/p&gt;</description>
+			<author>gep13</author>
+			<guid>http://cake-contrib.github.io/Cake.MSBuildTask/blog/new-release-0.1.0</guid>
+			<pubDate>Thu, 27 Apr 2017 00:00:00 GMT</pubDate>
+		</item>
+	</channel>
+</rss>
