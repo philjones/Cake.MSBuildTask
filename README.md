@@ -1,44 +1,26 @@
-# Cake.MSBuildTask
-An addin for Cake to help running MSBuild tasks
+Cake.MSBuildTask
+============
 
-Example code
-```csharp
-// 1. Add reference to addin the top of your cake script:
-#addin Cake.MSBuildTask
+Cake.MSBuildTask is an Addin for Cake which helps with the execution of MSBuild Tasks.
 
-// 2. Reference the dll(s) that has the MSBuild task(s) you want to use in your build
-// Note that for MSBuild.Extension.Pack the present version of Cake (0.5.4) can't use
-// '#addin MSBuild.Extension.Pack' as the Nuget package has two versions of dlls in it
-// instead you need to add MSBuild.Extension.Pack to tools/packages.config and reference dll like so:
-#r .\tools\Addins\MSBuild.Extension.Pack\tools\net40\MSBuild.ExtensionPack.dll
+## Information
 
-// 3. Use the MSBuild task in the script.
-// Here we are using SVN task from  MSBuild.Extension.Pack:
-Task("TestMSBuildTask")
-    .Does(() =>
-    {
-        // a. Create the task
-        var svn = new MSBuild.ExtensionPack.Subversion.Svn();
+| |Stable|Pre-release|
+|:--:|:--:|:--:|
+|GitHub Release|-|[![GitHub release](https://img.shields.io/github/release/cake-contrib/Cake.MSBuildTask.svg)](https://github.com/cake-contrib/Cake.MSBuildTask/releases/latest)|
+|NuGet|[![NuGet](https://img.shields.io/nuget/v/Cake.MSBuildTask.svg)](https://www.nuget.org/packages/Cake.MSBuildTask)|[![NuGet](https://img.shields.io/nuget/vpre/Cake.MSBuildTask.svg)](https://www.nuget.org/packages/Cake.MSBuildTask)|
 
-        var checkoutFolder = GetDirectories("./SrcFolder").FirstOrDefault();
- 
-        // b. Configure the task
-        // If the folder doesn't exist then do a Checkout, otherwise Update.
-        if (checkoutFolder == null)
-        {
-            checkoutFolder = MakeAbsolute((DirectoryPath)"./SrcFolder");
-            svn.TaskAction = "Checkout";
-            // The .ToTaskItem() and .ToTaskItems() are helper methods provided by MSBuildTaskAliases
-            svn.Items = checkoutUrl.ToTaskItems();
-            svn.Destination = checkoutFolder.ToTaskItem();
-        }
-        else
-        {
-            svn.TaskAction = "Update";
-            svn.Items = checkoutFolder.ToTaskItems();
-        }
- 
-        // c. Execute the task
-        MSBuildTaskExecute(svn);
-    });
-```
+## Build Status
+
+|Develop|Master|
+|:--:|:--:|
+|[![Build status](https://ci.appveyor.com/api/projects/status/vlcl0djo62amjmv5/branch/develop?svg=true)](https://ci.appveyor.com/project/cakecontrib/cake-msbuildtask/branch/develop)|[![Build status](https://ci.appveyor.com/api/projects/status/vlcl0djo62amjmv5/branch/develop?svg=true)](https://ci.appveyor.com/project/cakecontrib/cake-msbuildtask/branch/master)|
+
+## Quick Links
+
+- [Documentation](https://cake-contrib.github.io/Cake.MSBuildTask/)
+
+## Chat Room
+Come join in the conversation about Cake.MSBuildTask in our Gitter Chat Room
+
+[![Join the chat at https://gitter.im/cake-contrib/Lobby](https://badges.gitter.im/cake-contrib/Lobby.svg)](https://gitter.im/cake-contrib/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
